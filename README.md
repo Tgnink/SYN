@@ -4,16 +4,16 @@ drift roi correct for imagej
 # SYN
 drift roi correct for imagej
 ## requirenment for environgment
-tifffile==2020.12.4
-roifile==2020.11.28
-matplotlib==3.2.2
-opencv_contrib_python==4.4.0.46
-scikit_image.egg==19.0 (the newest github of skimage)
-numpy==1.18.5
-exifread==2.3.2
-Pillow==8.0.1
-scikit_learn==0.23.2
-skimage==0.0
+tifffile==2020.12.4  
+roifile==2020.11.28  
+matplotlib==3.2.2  
+opencv_contrib_python==4.4.0.46  
+scikit_image.egg==19.0 (the newest github of skimage)  
+numpy==1.18.5  
+exifread==2.3.2  
+Pillow==8.0.1  
+scikit_learn==0.23.2  
+skimage==0.0  
 
 you need install qt5 and opencv
 # usage
