@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 
 import numpy as np
+=======
+from copy import Error
+import os
+import numpy as np
+from numpy.core.fromnumeric import mean
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
 
 def filelist(txtfile):
     try:
@@ -11,7 +18,11 @@ def filelist(txtfile):
             file_list.append(line)
         f.close()
         return file_list
+<<<<<<< HEAD
     except Exception as e:
+=======
+    except Error as e:
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
         print(e)
 
 def expand_polygon(contour,pixel):

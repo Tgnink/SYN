@@ -83,6 +83,7 @@ def caculate_shift(imagetemplate,matched,sublength=60,maxshift=10,minroilength=1
         shiftx.append(ij[1]-ji[1])
         shifty.append(ij[0]-ji[0])
     
+<<<<<<< HEAD
     # fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 3),sharex=True,sharey=True)
     # ax1.imshow(imagetemplate)
     # ax2.imshow(matched)
@@ -98,6 +99,23 @@ def caculate_shift(imagetemplate,matched,sublength=60,maxshift=10,minroilength=1
     #     rect=plt.Rectangle((x2, y2), minroix, minroiy,edgecolor="blue",facecolor='None', alpha=0.6)
     #     ax2.add_patch(rect)
     # plt.show()
+=======
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 3),sharex=True,sharey=True)
+    ax1.imshow(imagetemplate)
+    ax2.imshow(matched)
+    for roirec in rectangles:
+        #print('www')
+        x1,y1,x2,y2=roirec
+        rect=plt.Rectangle((x1, y1), minroix, minroiy,edgecolor="red",facecolor='None', alpha=0.6)
+        ax1.add_patch(rect)
+        rect=plt.Rectangle((x2, y2), minroix, minroiy,edgecolor="blue",facecolor='None', alpha=0.6)
+        ax1.add_patch(rect)
+        rect=plt.Rectangle((x1, y1), minroix, minroiy,edgecolor="red",facecolor='None', alpha=0.6)
+        ax2.add_patch(rect)
+        rect=plt.Rectangle((x2, y2), minroix, minroiy,edgecolor="blue",facecolor='None', alpha=0.6)
+        ax2.add_patch(rect)
+    plt.show()
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
     return shiftx,shifty
 
 def analysis(template,targetlist,outlist,sublength=60,maxshift=20,minroilength=100):
@@ -107,7 +125,11 @@ def analysis(template,targetlist,outlist,sublength=60,maxshift=20,minroilength=1
         imagesource=Image.open(imagesourcefile)
         imagesource=np.asarray(imagesource)
         matched = match_histograms(imagesource, imagetemplate, multichannel=False)
+<<<<<<< HEAD
         #show_hist_match_result(imagesource,imagetemplate,matched)
+=======
+        show_hist_match_result(imagesource,imagetemplate,matched)
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
         np.random.seed(1)
         # correct shift image
         shiftx,shifty=caculate_shift(imagetemplate,matched,sublength,maxshift,minroilength)
@@ -155,6 +177,7 @@ def test():
 
     # histgrom match
     matched = match_histograms(imagesource, imagetemplate, multichannel=False)
+<<<<<<< HEAD
     # fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(8, 3),
     #                                     sharex=True, sharey=True)
     # for aa in (ax1, ax2, ax3):
@@ -170,6 +193,23 @@ def test():
 
     # plt.tight_layout()
     # plt.show()
+=======
+    fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(8, 3),
+                                        sharex=True, sharey=True)
+    for aa in (ax1, ax2, ax3):
+        aa.set_axis_off()
+
+    ax1.imshow(imagesource)
+    ax1.set_title('Source')
+    ax2.imshow(imagetemplate)
+    ax2.set_title('Reference')
+    ax3.imshow(matched)
+    ax3.set_title('Matched')  
+
+
+    plt.tight_layout()
+    plt.show()
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
 
 
     # save matched fig
@@ -226,8 +266,13 @@ def test():
         print(ij,ji,ij[0]-ji[0],ij[1]-ji[1])
         shiftx.append(ij[1]-ji[1])
         shifty.append(ij[0]-ji[0])
+<<<<<<< HEAD
     # ax1.imshow(imagetemplate)
     # ax2.imshow(matched)
+=======
+    ax1.imshow(imagetemplate)
+    ax2.imshow(matched)
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
     for roirec in rectangles:
         #print('www')
         x1,y1,x2,y2=roirec
@@ -240,7 +285,11 @@ def test():
         rect=plt.Rectangle((x2, y2), minroix, minroiy,edgecolor="blue",facecolor='None', alpha=0.6)
         ax2.add_patch(rect)
 
+<<<<<<< HEAD
     # plt.show()
+=======
+    plt.show()
+>>>>>>> 33fb47138e32dbfa6c18e6c2e63781a8e1fa5c01
 
 
 
