@@ -1,0 +1,11 @@
+opencv_python_headless==4.2.0.34
+scikit_image.egg==info
+numpy==1.18.5
+tifffile==2020.12.4
+matplotlib==3.2.2
+scipy==1.5.0
+roifile==2020.11.28
+Pillow==8.2.0
+py2exe==0.10.4.0
+PyQt5==5.15.4
+skimage==0.0
